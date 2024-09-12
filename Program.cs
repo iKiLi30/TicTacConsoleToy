@@ -177,6 +177,7 @@ namespace TicTacConcolToy
                     currentTurn = 2;
                     Console.Clear();
                 }
+
                 program.HorizontalWin();
                 program.VerticalWin();
                 program.DiagonalWin();
