@@ -24,6 +24,7 @@ namespace TicTacConcolToy
             Console.WriteLine("|     |     |     |");
             Console.WriteLine("-------------------");
         }
+        public char playerCharacter = ' ';
         public void Play(int player, int input)
         {
             if (player == 1) playerCharacter = 'X';
@@ -42,6 +43,7 @@ namespace TicTacConcolToy
                 case 9: boardPositions[8] = playerCharacter; break;
             }
         }
+        char[] playerCharacters = { 'X', 'O' };
 
 
         char[] playerCharacters = { 'X', 'O' };
@@ -135,7 +137,7 @@ namespace TicTacConcolToy
 
             while (!program.gameEnded)
             {
-                program.DrawBoard();
+            program.DrawBoard();
                 validInputGiven = false;
                 while (!validInputGiven)
                 {
