@@ -24,7 +24,7 @@ namespace TicTacConcolToy
             Console.WriteLine("|     |     |     |");
             Console.WriteLine("-------------------");
         }
-        public char playerCharacter = ' ';
+       
         public void Play(int player, int input)
         {
             if (player == 1) playerCharacter = 'X';
@@ -43,9 +43,7 @@ namespace TicTacConcolToy
                 case 9: boardPositions[8] = playerCharacter; break;
             }
         }
-        char[] playerCharacters = { 'X', 'O' };
-
-
+        
         char[] playerCharacters = { 'X', 'O' };
         public void HorizontalWin()
         {
@@ -120,9 +118,9 @@ namespace TicTacConcolToy
         }
         void resetBoard()
         {
+            Console.Clear();
             char[] ArrBoardInitialize = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
             boardPositions = ArrBoardInitialize;
-            DrawBoard();
             gameEnded = false;
 
         }
@@ -130,6 +128,7 @@ namespace TicTacConcolToy
      
         static void Main(string[] args)
         {
+            Console.Clear();
             Program program = new Program();
             bool validInputGiven = true;
             int currentTurn = 1;
@@ -137,7 +136,7 @@ namespace TicTacConcolToy
 
             while (!program.gameEnded)
             {
-            program.DrawBoard();
+                program.DrawBoard();
                 validInputGiven = false;
                 while (!validInputGiven)
                 {
@@ -170,11 +169,13 @@ namespace TicTacConcolToy
                 {
                     program.Play(currentTurn, playerInput);
                     currentTurn = 1;
+                    Console.Clear();
                 }
                 else if (currentTurn == 1)
                 { 
                     program.Play(currentTurn, playerInput);
                     currentTurn = 2;
+                    Console.Clear();
                 }
                 program.HorizontalWin();
                 program.VerticalWin();
